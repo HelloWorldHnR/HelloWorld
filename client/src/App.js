@@ -15,7 +15,7 @@ export const StateContext = React.createContext({});
 
 const SG_POSITION = { lat: 1.3521, lng: 103.8198 };
 
-const socket = io("/", {
+const socket = io('/', {
   withCredentials: true,
   extraHeaders: {
     'my-custom-header': 'abcd',

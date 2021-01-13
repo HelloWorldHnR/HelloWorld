@@ -8,7 +8,7 @@ import ListOfImages from '../picturecontainer/ListOfImages';
 import io from 'socket.io-client';
 
 const NameHolder = () => {
-  const socket = io('http://localhost:5000', {
+  const socket = io('/', {
     withCredentials: true,
     extraHeaders: {
       'my-custom-header': 'abcd',

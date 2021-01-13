@@ -1,9 +1,9 @@
 // Retrieve confidential information from .env file
-const result = require('dotenv').config();
+// const result = require('dotenv').config();
 
-if (result.error) {
-  throw result.error;
-}
+// if (result.error) {
+//   throw result.error;
+// }
 
 // import statements
 const express = require('express');
@@ -17,13 +17,12 @@ const isEmpty = require('lodash/isEmpty');
 
 // Initialize app to a server
 const app = express();
-const server = require('http').createServer(app);
+const server = require('https').createServer(app);
 
 const io = require('socket.io')(server, {
   cors: {
-    origin: ['http://localhost:3000', 'http://localhost:64226'],
-    methods: ['GET', 'POST'],
-    allowedHeaders: ['my-custom-header'],
+    origin: 'https://hello-world-hacknroll.netlify.app',
+    methods: ['GET', 'POST', 'OPTIONS'],
     credentials: true,
   },
 });
@@ -31,7 +30,8 @@ const cors = require('cors');
 
 var corsOptions = {
   // Specifies the origin(s) from which a server request can occur aside from its own origin
-  origin: ['http://localhost:3000', 'http://localhost:64226'],
+  origin: 'https://hello-world-hacknroll.netlify.app',
+  credentials: true,
 };
 
 app.use(cors(corsOptions));
@@ -60,7 +60,7 @@ app.use(
 );
 
 // Gets the URI of the MongoDB database used by app
-const db = require('./config/keys').mongoURI; // Can change to mongoAtlasURI to connect to cloud database
+const db = require('./config/keys').mongoAtlasURI; // Can change to mongoAtlasURI to connect to cloud database
 
 // mongoDB settings
 const options = {
