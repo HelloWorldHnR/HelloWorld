@@ -8,7 +8,7 @@ import ListOfImages from '../picturecontainer/ListOfImages';
 import io from 'socket.io-client';
 
 const NameHolder = () => {
-  const socket = io('/', {
+  const socket = io('https://hello-world-hacknroll.herokuapp.com', {
     withCredentials: true,
   });
 
