@@ -23,6 +23,7 @@ const io = require('socket.io')(server, {
   cors: {
     origin: 'https://hello-world-hacknroll.netlify.app',
     methods: ['GET', 'POST', 'OPTIONS'],
+    transports: ['websocket'],
     credentials: true,
   },
 });
