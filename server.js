@@ -17,7 +17,7 @@ const isEmpty = require('lodash/isEmpty');
 
 // Initialize app to a server
 const app = express();
-const server = require('https').createServer(app);
+const server = require('http').createServer(app);
 
 const io = require('socket.io')(server, {
   cors: {

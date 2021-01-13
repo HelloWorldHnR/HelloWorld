@@ -10,9 +10,6 @@ import io from 'socket.io-client';
 const NameHolder = () => {
   const socket = io('/', {
     withCredentials: true,
-    extraHeaders: {
-      'my-custom-header': 'abcd',
-    },
   });
 
   const { name, setName, image, setImage } = useContext(StateContext);
